@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "App Compiler",
+  title: "SchemaForge AI",
   description: "Natural Language to Production-Ready App Schema",
 };
 

@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: oklch(0.627 0.265 303.9);
-  --color-primary-foreground: oklch(0.985 0.001 106.423);
+  --color-primary: #00f0ff;
+  --color-primary-foreground: #0a0a0b;
+  --color-secondary: #32ff7e;
+  --color-tertiary: #7000ff;
+  --color-background: #050507;
+  --color-surface: #0c0c0e;
   
   --radius-xl: 0.75rem;
   --radius-2xl: 1rem;
@@ -12,11 +16,11 @@
 
 @layer base {
   * { 
-    @apply border-zinc-200;
+    @apply border-zinc-800/40;
   }
   
   html, body { 
-    @apply bg-[#FAFAFA] text-zinc-900;
+    @apply bg-[#050507] text-zinc-100;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -25,28 +29,40 @@
 
 @layer utilities {
   .glass {
-    background-color: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    background-color: rgba(12, 12, 14, 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
   }
   
   .glass-dark {
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    background-color: rgba(5, 5, 7, 0.8);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-600;
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-zinc-200 to-zinc-400;
   }
 
-  .bg-mesh-light {
+  .text-gradient-cyan {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#00f0ff] via-[#d1bcff] to-[#7000ff];
+  }
+
+  .bg-mesh-dark {
     background-image: 
-      radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.05) 0, transparent 50%), 
-      radial-gradient(at 50% 0%, rgba(59, 130, 246, 0.05) 0, transparent 50%), 
-      radial-gradient(at 100% 0%, rgba(236, 72, 153, 0.05) 0, transparent 50%);
+      radial-gradient(at 0% 0%, rgba(0, 240, 255, 0.03) 0, transparent 50%), 
+      radial-gradient(at 50% 0%, rgba(112, 0, 255, 0.05) 0, transparent 50%), 
+      radial-gradient(at 100% 0%, rgba(50, 255, 126, 0.02) 0, transparent 50%);
+  }
+
+  .shadow-glow-cyan {
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+  }
+
+  .shadow-glow-purple {
+    box-shadow: 0 0 20px rgba(112, 0, 255, 0.2);
   }
 }
 
@@ -59,14 +75,15 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #E4E4E7;
+  background: #1f1f23;
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #D4D4D8;
+  background: #2e2e35;
 }
 
 ::selection {
-  background: rgba(139, 92, 246, 0.2);
-  color: inherit;
+  background: rgba(0, 240, 255, 0.2);
+  color: #ffffff;
 }
+
